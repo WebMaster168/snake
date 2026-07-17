@@ -1,0 +1,288 @@
+*{
+    box-sizing: border-box;
+}
+html{
+	height: 100vh;
+    
+}
+.river__up{
+	
+}
+
+body{
+	font-family: sans-serif;
+	min-height: 100vh;
+	
+	background-image: url('../images/water.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+
+position: relative;
+	/*right: 0;
+	left: 0;*/
+	z-index: 2;
+}
+.snake__score{
+	font-family: "Dancing Script", serif;
+	font-style: italic;
+	color: chocolate;
+	font-weight: 800;
+	font-size: 24px;
+	
+	position: absolute;
+	z-index: 7;
+	left: 30px;
+	top: 30px;
+}
+.sea img{
+	width: 100%;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.fence__item:nth-child(1) img{
+	left: 0;
+    top: -50px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(2) img{
+	left: 0;
+    top: 115px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(3) img{
+	left: 0;
+    top: 280px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(4) img{
+	left: 0;
+    top: 445px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+}
+.fence__item:nth-child(5) img{
+	left: 0;
+	top: 625px;
+    height: 545px;
+    transform: rotate(90deg) scale(0.2);
+    transform-origin: left top;
+	width: 500px;
+}
+.food{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+}
+.food img{
+	width: 20px;
+	height: 20px;
+	position: static;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.sea{
+
+	min-height: 100vh;
+}
+.area{
+	min-height: 100vh;
+	background: url('../images/desert.jpg'),rgba(210, 174, 33, 0.9);
+	background-blend-mode: overlay;
+	-webkit-box-shadow: 64px -54px 65px 209px rgba(210, 174, 33, 1), 64px -54px 65px 89px rgba(210, 174, 33, 1) inset;
+	-moz-box-shadow: 64px -54px 65px 209px rgba(210, 174, 33, 1), 64px -54px 65px 89px rgba(210, 174, 33, 1) inset;
+	box-shadow: 64px -54px 65px 209px rgba(210, 174, 33, 1), 64px -54px 65px 89px rgba(210, 174, 33, 1) inset;
+	
+	
+	max-width: 1180px;
+  
+	margin: 0 auto;
+	
+    
+	position: absolute;
+	right: 0;
+	left: 0;
+	z-index: 3;
+	
+}
+.area-wrapper{
+    background-image: url('../images/grass.jpg');
+    max-width: 1170px;
+	box-shadow: 5px 1px 69px 76px rgba(16, 170, 31, 1), 1px 1px 72px 76px rgba(16, 170, 31, 1) inset;
+    min-height: calc(100vh - 50px);
+	margin: 0 auto;
+	border-radius: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+	position: absolute;
+	right: 0;
+	left: 0;
+	z-index: 4;
+	top: 25px;
+	
+}
+
+.modal-result-wrapper{
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+	z-index: 5;
+	position: fixed;
+	background-color: rgba(0,0,0,0.8);
+	
+	display: block;
+}
+.modal-result-wrapper.hidden{
+	display: none;
+}
+
+
+#modal-window{
+	width: 280px;
+	height: 180px;
+    border-radius: 20px;
+
+	border:1px solid black;
+	background-color: white;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.startGame{
+	width: 150px;
+	padding: 8px;
+    background-color: blue;
+    border-radius: 10px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+h1{
+	text-align: center;
+}
+#content{
+    margin-bottom: 25px;
+    font-size: 17px;
+    width: 50%;
+    text-align: center;
+}
+.snake__body--eating{
+	opacity: 0;
+}
+.snake__body--eatingVisible{
+	opacity: 1;
+}
+.snake{
+	
+    height: max-content;
+	width: max-content;
+}
+
+.snake__segment{
+    width: 25px;
+    height: 25px;
+    background-color: darkorange;
+    border: 4px solid #fff;
+	
+}
+.snake__headWrapper{
+	width: 25px;
+    height: 25px;
+	padding-top: 3px;
+	position: absolute;
+}
+.snake__body{
+	transform: translate(0px,0px);
+	position: absolute;
+	transition: all .3s ease-in-out, opacity 1.5s;
+	
+	left: 175px;
+}
+
+.eya{
+    width: 5px;
+    height: 5px;
+    background-color: yellow;
+}
+.snake__head{
+	width: 25px;
+    height: 25px;
+	padding-top: 3px;
+    background-color: black;
+    border: none;
+    display: flex;
+	
+    justify-content: space-around;
+	transform:rotate(90deg);
+	transform-origin: center;
+	left:0;
+}
+.snake__body-crocodily--visible{
+	
+	background-color: blueviolet;
+}
+.river__up img{
+	transform: rotate(-90deg);
+	position: absolute;
+    transform-origin: top;
+    width: 35px;
+    height: 1325px;
+    left: -75px;
+    top: 0px;
+}
+.bridge__item img{
+	transform: rotate(-270deg);
+	
+    transform-origin: top;
+    width: 125px;
+    height: 200px;
+}
+
+.bridge__item:nth-child(1) img{
+	
+    left: 140px;
+    top: 747px;
+}
+.bridge__item:nth-child(2) img{
+	
+    left: 360px;
+    top: 747px;
+}
+.bridge__item:nth-child(3) img{
+	
+    left: 580px;
+    top: 747px;
+}
+.bridge__item:nth-child(4) img{
+	
+    left: 800px;
+    top: 747px;
+}
+.bridge__item:nth-child(5) img{
+	
+    left: 1020px;
+    top: 747px;
+}
+.bridge__item:nth-child(6) img{
+	
+    left: 1240px;
+    top: 747px;
+}
+
+.mobile-controls{
+    display:none;
+}

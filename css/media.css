@@ -1,0 +1,141 @@
+/* ===========================
+   МОБИЛЬНАЯ ВЕРСИЯ
+=========================== */
+@media(max-width: 768px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .sea {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .snake__score {
+        position: fixed;
+        top: 5px;
+        left: 14%;
+        transform: translateX(-50%), scale(.8);
+        z-index: 100;
+        font-size: 24px;
+    }
+
+    .area {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .area-wrapper {
+        position: relative;
+        width: calc(100vw - 16px);
+    height: calc(100vh - 120px);
+
+    margin: 8px;
+        /* уменьшаем игровое поле */
+        transform: none;
+        
+
+    }
+
+    /* слои карты */
+    .river__up,
+    .fence__inner,
+    .bridge__inner {
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* змея всегда сверху */
+    .snake {
+        position: absolute;
+        z-index: 10;
+    }
+
+    .snake__body {
+        position: absolute;
+    }
+
+    .mobile-controls {
+
+        position: fixed;
+
+        bottom: 20px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        z-index: 200;
+
+    }
+
+    .mobile-controls button {
+
+        width: 55px;
+        height: 55px;
+
+        margin: 3px;
+
+        font-size: 25px;
+
+        border-radius: 10px;
+        border: none;
+
+        background: rgba(255,255,255,.8);
+
+    }
+
+    .mobile-controls div {
+
+        display:flex;
+
+    }
+    .area{
+        background: none;
+        box-shadow: none;
+    }
+    .river__up, .fence__inner, .bridge__inner {
+        display: none;
+    }
+    .area-wrapper{
+        width: 100%;
+        box-shadow: none
+    }
+}
+
+@media(max-width: 400px) {
+
+    .area-wrapper {
+
+        transform: scale(0.5);
+
+    }
+
+    .snake__score {
+
+        font-size:20px;
+
+    }
+
+    .mobile-controls button {
+
+        width:45px;
+        height:45px;
+
+    }
+    .river__up,
+    .fence__inner,
+    .bridge__inner{
+        display: none;
+    }
+}
