@@ -199,7 +199,7 @@ const examinationOnFoodEating =(score, X, Y) =>{
     }
     return {score, snakeHeadXposition, snakeHeadYposition}    
 }
-const prepareResult = (score, intervalBegin) =>{
+const prepareResult = (score) =>{
     modalResult.classList.remove('hidden');
     contentWrapper.textContent = 'Game over! \nScore: ' + score;
 	
@@ -215,7 +215,7 @@ const prepareResult = (score, intervalBegin) =>{
     cycleGame = false
     
 }
-const examinationOnCollision=(positionHeadX, positionHeadY, score, intervalBegin)=>{
+const examinationOnCollision=(positionHeadX, positionHeadY)=>{
     positionHeadX = parseInt(positionHeadX.match(/\d+/))
     positionHeadY = parseInt(positionHeadY.match(/\d+/))
        
@@ -279,7 +279,7 @@ document.addEventListener('keydown',e=>{
     }
     
 });
-const moveSnake = (score) => {
+const moveSnake = () => {
     console.log("змея ЛЕТИ")
     if(!firstPause){
         createRandomFood();
@@ -292,7 +292,7 @@ const moveSnake = (score) => {
         let segmentX;
             let segmentY;
         
-        const logicMove = (prevX, prevY, score, intervalBegin) =>{
+        const logicMove = (prevX, prevY) =>{
             snakeArray.forEach((el, i) =>{
                 snakeLength = snakeArray.length;
                 currentX = el.style.left;
@@ -304,7 +304,7 @@ const moveSnake = (score) => {
                 
                 if(i === 0){
                     console.log(snakeArray, currentX, currentY)
-                    examinationOnCollision(currentX, currentY, score, intervalBegin)
+                    examinationOnCollision(currentX, currentY)
                 }
 
                 
